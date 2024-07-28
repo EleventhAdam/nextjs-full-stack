@@ -10,10 +10,10 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTGRES_URL")
 }
 
-model Posts{
+model Post{
   id Int @id @default(autoincrement())
   text String
   createdAt DateTime @default(now())
