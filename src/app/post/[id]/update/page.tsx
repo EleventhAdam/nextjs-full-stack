@@ -10,16 +10,14 @@ export default async function UpdatePostPage({
     const postId = Number(params.id);
     if (!postId) redirect("/");
     const post = await prisma.post.findUnique({
-        where:{
-            id:postId
+        where: {
+            id: postId
         }
     })
-    if(!post) redirect("/")
+    if (!post) redirect("/")
     return (
-        <div>
-            <UpdateForm
-                post={post}
-            />
-        </div>
+        <UpdateForm
+            post={post}
+        />
     )
 }
